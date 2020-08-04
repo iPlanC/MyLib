@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <system.h>
 
 #define BOOL	int
 #define TRUE	1
