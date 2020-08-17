@@ -1,3 +1,9 @@
+/*
+ * @Author: PlanC
+ * @Date: 2020-06-10 12:27:23
+ * @LastEditTime: 2020-08-17 10:39:01
+ * @FilePath: \3dShowc:\Users\planc\Desktop\mylib\MyLib\mylib.h
+ */
 #include <stdio.h>
 #include <string.h>
 
@@ -8,6 +14,8 @@
 int*	Bubble_sort	(int values[], int reverse);
 int		Max_int		(int values[]);
 int		Min_int		(int values[]);
+void    ToUpper		(char *str);
+void	ToLower		(char *str);
 
 int* Bubble_sort(int values[], BOOL reverse) {
 	int temp = 0;
@@ -51,4 +59,22 @@ int Min_int(int values[]) {
 		if (temp_min > values[i]) temp_min = values[i];
 	}
 	return temp_min;
+}
+
+void ToUpper(char *str) {
+	int i = 0;
+	for (i = 0; i < strlen(str); i++) {
+		if (str[i] >= 97 && str[i] <= 122) {
+			str[i] = str[i] - 32;
+		}
+	}
+}
+
+void ToLower(char *str) {
+	int i = 0;
+	for (i = 0; i < strlen(str); i++) {
+		if (str[i] >= 65 && str[i] <= 90) {
+			str[i] = str[i] + 32;
+		}
+	}
 }
