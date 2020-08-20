@@ -1,9 +1,10 @@
 /*
  * @Author: PlanC
  * @Date: 2020-06-10 12:27:23
- * @LastEditTime: 2020-08-17 10:39:01
+ * @LastEditTime: 2020-08-20 13:48:12
  * @FilePath: \3dShowc:\Users\planc\Desktop\mylib\MyLib\mylib.h
  */
+
 #include <stdio.h>
 #include <string.h>
 #include <system.h>
@@ -12,14 +13,17 @@
 #define TRUE	1
 #define FALSE	0
 
-char*	Alphabet	(BOOL bigger, BOOL reverse);
-int*	Bubble_sort	(int values[], BOOL reverse);
-int		Max_int		(int values[]);
-int		Min_int		(int values[]);
-void    ToUpper		(char *str);
-void	ToLower		(char *str);
+char*	alphabet	(BOOL bigger, BOOL reverse);
+int*	bubble_sort	(int values[], BOOL reverse);
+int		lengthint	(int number);
+int		max_int		(int values[]);
+int		min_int		(int values[]);
+int		stoi		(char *number);
+char* 	itos		(int number)
+void	toUpper		(char *str);
+void	toLower		(char *str);
 
-char* Alphabet(BOOL bigger, BOOL reverse) {
+char* alphabet(BOOL bigger, BOOL reverse) {
 	int i = 0;
 	int temp = 0;
 	char start = 'A';
@@ -43,7 +47,7 @@ char* Alphabet(BOOL bigger, BOOL reverse) {
 	}
 }
 
-int* Bubble_sort(int values[], BOOL reverse) {
+int* bubble_sort(int values[], BOOL reverse) {
 	int i = 0;
 	int j = 0;
 	int temp = 0;
@@ -69,7 +73,13 @@ int* Bubble_sort(int values[], BOOL reverse) {
 	}
 }
 
-int Max_int(int values[]) {
+int lengthint(int number) {
+	int count = 0;
+	while ((number/=10) != 0) count++;
+	reutrn count;
+}
+
+int max_int(int values[]) {
 	int i = 0;
 	int temp_max = values[0];
 	for (i = 0; i <= sizeof(values) / sizeof(int); i++) {
@@ -78,7 +88,7 @@ int Max_int(int values[]) {
 	return temp_max;
 }
 
-int Min_int(int values[]) {
+int min_int(int values[]) {
 	int i = 0;
 	int temp_min = values[0];
 	for (i = 0; i <= sizeof(values) / sizeof(int); i++) {
@@ -87,7 +97,31 @@ int Min_int(int values[]) {
 	return temp_min;
 }
 
-void ToUpper(char *str) {
+int stoi(char *number) {
+	int i = 0;
+	int result = 0;
+	for (i = 0; i < strlen(number); i++) {
+		if (number[i] >= 48 && number[i] <= 57) {
+			result = result * 10 + (number[i] - '0');
+		}
+		else {
+			throw number[i];
+		}
+	}
+	return result;
+}
+
+char* itos(int number) {
+    int i = 0;
+	int length = lengthint(number);
+    char* str[length] = {'\0'};
+    while (number / 10 != 0) {
+        str[i++] = number / 10;
+    }
+    return str;
+}
+
+void toUpper(char *str) {
 	int i = 0;
 	for (i = 0; i < strlen(str); i++) {
 		if (str[i] >= 97 && str[i] <= 122) {
@@ -96,7 +130,7 @@ void ToUpper(char *str) {
 	}
 }
 
-void ToLower(char *str) {
+void toLower(char *str) {
 	int i = 0;
 	for (i = 0; i < strlen(str); i++) {
 		if (str[i] >= 65 && str[i] <= 90) {
