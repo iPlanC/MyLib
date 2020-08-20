@@ -1,3 +1,10 @@
+/*
+ * @Author: PlanC
+ * @Date: 2020-08-20 13:53:50
+ * @LastEditTime: 2020-08-20 14:17:44
+ * @FilePath: \MyLib\demo\demo.c
+ */
+
 #include "../mylib.h"
 
 int main() {

@@ -1,8 +1,8 @@
 /*
  * @Author: PlanC
  * @Date: 2020-06-10 12:27:23
- * @LastEditTime: 2020-08-20 13:48:12
- * @FilePath: \3dShowc:\Users\planc\Desktop\mylib\MyLib\mylib.h
+ * @LastEditTime: 2020-08-20 14:18:08
+ * @FilePath: \MyLib\mylib.h
  */
 
 #include <stdio.h>
@@ -112,13 +112,13 @@ int stoi(char *number) {
 }
 
 char* itos(int number) {
-    int i = 0;
+	int i = 0;
 	int length = lengthint(number);
-    char* str[length] = {'\0'};
-    while (number / 10 != 0) {
-        str[i++] = number / 10;
-    }
-    return str;
+	char* str[length] = {'\0'};
+	while (number / 10 != 0) {
+		str[i++] = number / 10;
+	}
+	return str;
 }
 
 void toUpper(char *str) {
