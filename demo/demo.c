@@ -1,7 +1,7 @@
 /*
  * @Author: PlanC
  * @Date: 2020-08-20 13:53:50
- * @LastEditTime: 2020-08-24 09:48:22
+ * @LastEditTime: 2020-08-24 10:32:26
  * @FilePath: \MyLib\demo\demo.c
  */
 
@@ -23,12 +23,12 @@ int main() {
 	p = bubble_sort(num1, 3, 0);
 	q = bubble_sort(num2, 3, 1);
 	for (i = 0; i < 3; i++) {
-		printf("%d ", *p++);
+		printf("%d ", *(p + i));
 		// 1 2 3
 	}
 	printf("\n");
 	for (i = 0; i < 3; i++) {
-		printf("%d ", *q++);
+		printf("%d ", *(q + i));
 		// 6 5 4
 	}
 	printf("\n");
@@ -40,7 +40,7 @@ int main() {
 	// max_int() min_int()
 	int num[3] = {16, 35, 7};
 	printf("%d %d\n", max_int(num, 3), min_int(num, 3));
-	// 35 16
+	// 35 7
 
 	// stoi()
 	printf("%d\n", stoi("1001"));

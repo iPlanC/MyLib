@@ -1,8 +1,8 @@
 /*
  * @Author: PlanC
  * @Date: 2020-06-10 12:27:23
- * @LastEditTime: 2020-08-24 10:02:11
- * @FilePath: /MyLib/mylib.h
+ * @LastEditTime: 2020-08-24 10:32:16
+ * @FilePath: \MyLib\mylib.h
  */
 
 #include <ctype.h>
@@ -83,7 +83,7 @@ int lengthint(int number) {
 int max_int(int *values, int length) {
 	int i = 0;
 	int temp_max = values[0];
-	for (i = 0; i <= length; i++) {
+	for (i = 0; i < length; i++) {
 		if (temp_max < values[i]) temp_max = values[i];
 	}
 	return temp_max;
@@ -92,7 +92,7 @@ int max_int(int *values, int length) {
 int min_int(int *values, int length) {
 	int i = 0;
 	int temp_min = values[0];
-	for (i = 0; i <= length; i++) {
+	for (i = 0; i < length; i++) {
 		if (temp_min > values[i]) temp_min = values[i];
 	}
 	return temp_min;
