@@ -1,8 +1,8 @@
 /*
  * @Author: PlanC
  * @Date: 2020-06-10 12:27:23
- * @LastEditTime: 2020-08-24 09:46:33
- * @FilePath: \MyLib\mylib.h
+ * @LastEditTime: 2020-08-24 10:02:11
+ * @FilePath: /MyLib/mylib.h
  */
 
 #include <ctype.h>
@@ -21,8 +21,6 @@ int		max_int		(int *values, int length);
 int		min_int		(int *values, int length);
 int		stoi		(char *str);
 char* 	itos		(int number);
-char*	toUpper		(char *str);
-char*	toLower		(char *str);
 
 char* alphabet(BOOL bigger, BOOL reverse) {
 	int i = 0;
@@ -133,25 +131,5 @@ char* itos(int number) {
 		str[strlen(str) - j - 1] = temp;
 	}
 	str[i++] = '\0';
-	return str;
-}
-
-char* toUpper(char *str) {
-	int i = 0;
-	for (i = 0; i < strlen(str); i++) {
-		if (str[i] >= 97 && str[i] <= 122) {
-			str[i] = str[i] - 32;
-		}
-	}
-	return str;
-}
-
-char* toLower(char *str) {
-	int i = 0;
-	for (i = 0; i < strlen(str); i++) {
-		if (str[i] >= 65 && str[i] <= 90) {
-			str[i] = str[i] + 32;
-		}
-	}
 	return str;
 }

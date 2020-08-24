@@ -50,12 +50,5 @@ int main() {
 	printf("%s\n", itos(1002));
 	// 1002(char*)
 
-	// toUpper()
-	char *str = "Hello";
-	printf("%s ", toUpper(str));
-	printf("%s ", toLower(str));
-	printf("\n")
-	// HELLO hello
-
 	return 0;
 }
